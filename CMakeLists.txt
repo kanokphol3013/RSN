@@ -37,6 +37,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 set(CORE_SOURCES
     src/core/recovery_engine.cpp
     src/core/file_registry.cpp
+    src/core/file_carving.cpp
 )
 
 set(COMMON_SOURCES
@@ -98,7 +99,9 @@ if(BUILD_TESTS AND GTest_FOUND)
 
     add_executable(rsn_tests
         tests/unit/core/recovery_engine_test.cpp
+        tests/unit/core/file_carving_test.cpp
         tests/unit/filesystems/ntfs_parser_test.cpp
+        tests/unit/filesystems/ntfs_structures_test.cpp
         tests/unit/common/utils_test.cpp
     )
 
